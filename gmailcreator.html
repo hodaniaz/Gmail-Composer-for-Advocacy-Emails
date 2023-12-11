@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Composer</title>
+</head>
+<body>
+    <h1>Click the link below to support Brother Amro:</h1>
+    <p>Thank you!</p>
+    <a href="#" id="composeLink">Compose Email</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var composeLink = document.getElementById('composeLink');
+
+            composeLink.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                // Call the function to open Gmail compose window
+                openGmailCompose();
+            });
+        });
+
+        function openGmailCompose() {
+            // Define the email parameters
+            var to = 'recipient@example.com'; // Replace with the actual recipient's email address
+            var subject = 'Concern Regarding Amro Fadel';
+            var body = `
+                Hello,
+
+                I hope this message finds you well. I am writing to you as a concerned individual regarding a recent matter involving one of your employees, Amro Fadel.
+
+                It has come to my attention that Amro has been wrongfully terminated following a distressing incident related to the ongoing political unrest between Israel and Palestine. Amro, while attempting to protect his family and community, found himself targeted by individuals who baited him into removing a disturbing poster strategically placed in his neighborhood. This act, done out of concern for his son’s well-being, led to a series of unfortunate events.
+
+                Subsequently, Amro became the victim of online harassment, doxxing, and false accusations that were shared across social media platforms. His personal and professional life, including his side business, came under attack, and despite being the target of hate and harassment, he maintained his composure and acted within the bounds of protecting his family.
+
+                It is disheartening to learn that Burlington Stores, as Amro Fadel’s employer, chose to terminate his employment. I understand the need for maintaining a positive public image, but it is crucial to consider the context in which Amro found himself. He was victimized for his religious beliefs and unfairly labeled without due consideration of the circumstances that led to his actions.
+
+                Amro Fadel has been a dedicated and valuable employee, and I urge you to reconsider the decision to terminate him. This situation calls for empathy and a just resolution that recognizes Amro as a victim rather than a wrongdoer. In these challenging times, it is important for organizations like Burlington Stores to stand against hate and discrimination, supporting employees who find themselves unfairly targeted. I kindly request that you review Amro Fadel’s case with compassion and fairness, taking into account the extenuating circumstances surrounding his termination. Your reconsideration will not only rectify an injustice but also send a powerful message about the values Burlington Stores upholds in the face of adversity.
+
+                Thank you for your time and understanding.
+
+                Sincerely,
+                Concerned Consumer
+            `;
+
+            // Build the Gmail compose URL
+            var gmailComposeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+            // Open the Gmail compose URL in a new window or tab
+            window.open(gmailComposeUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
